@@ -1,0 +1,38 @@
+.featuredproducts{
+    background-color: black;
+    color: white;
+   padding: 60px 40px 80px;
+}
+.section-title{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    text-align: center;
+}
+.card img{
+    width:200px;
+    height:200px;
+}
+
+
+/* DOTS */
+.slick-dots {
+  bottom: -40px;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+  color: #777;
+  opacity: 1;
+}
+
+.slick-dots li.slick-active button:before,
+.slick-dots li:hover button:before {
+  color: red;
+}
