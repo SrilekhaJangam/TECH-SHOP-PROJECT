@@ -16,6 +16,7 @@ const settings = {
 
   slidesToShow: 3,
   slidesToScroll: 1, 
+  
   centerMode:true,
   centerPadding:"320px",
   focusOnSelect:true,
