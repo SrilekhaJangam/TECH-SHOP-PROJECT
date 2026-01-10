@@ -1,3 +1,169 @@
+/* .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  background: #0f0f0f;
+  color: #fff;
+}
+
+
+.logo a {
+  font-size: 26px;
+  font-weight: 600;
+  color: #cfd8ff;
+  text-decoration: none;
+}
+
+
+.search-box {
+  position: relative;
+  width: 420px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background: #111;
+  color: #fff;
+  outline: none;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  width: 100%;
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 4px;
+  max-height: 260px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.search-item {
+  display: block;
+  padding: 10px 14px;
+  color: #ddd;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.search-item:hover {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.no-result {
+  padding: 12px;
+  color: #999;
+  font-size: 14px;
+}
+
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 22px;
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+
+.user-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 240px;
+  background: #1c1c1c;
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+.dropdown-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.dropdown-subtitle {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+.dropdown-link {
+  display: block;
+  background: #111;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown-link:hover {
+  background: red;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .navbar {
   background-color: black;
   color: white;
@@ -8,7 +174,7 @@
   align-items: center;
 }
 
-/* Logo */
+
 .logo h1 {
   font-size: 40px;
   font-weight: bolder;
@@ -18,5 +184,5 @@
     display: flex;
     gap:30px;
     font-size: 20px;
-}
+} 
 
