@@ -14,6 +14,7 @@ export const AppRouter=()=> {
     <Routes>
         <Route path="/" element={<Home />} />
          <Route path="/products" element={<Products />} />
+         <Route path="/product/:id" element={<SingleProduct />} />
       <Route path="/cart" element={<Cart />} />
      
     </Routes>

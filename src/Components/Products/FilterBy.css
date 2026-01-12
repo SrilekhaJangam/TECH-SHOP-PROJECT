@@ -1,0 +1,44 @@
+.filterby {
+  width: 260px;
+  height: 100vh;
+  padding: 30px 20px;
+  background: #0e0e0e;
+  color: #fff;
+  overflow-y: auto;
+}
+
+.filterby-header h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.filterby-section {
+  margin-top: 25px;
+}
+
+.filterby-section h4 {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.filterby-section label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.filterby-section input[type="checkbox"] {
+  accent-color: red;
+}
+
+.filterby-section input[type="range"] {
+  width: 100%;
+}
+
+.filterby-price {
+  margin-top: 6px;
+  font-size: 14px;
+}
