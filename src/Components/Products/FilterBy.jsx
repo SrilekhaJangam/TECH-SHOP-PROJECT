@@ -1,6 +1,10 @@
 import "./FilterBy.css";
+import { sortMenu, brandsMenu, categoryMenu, priceRange } 
+from "../Products/FilterBarData";
 
 const FilterBy = ({
+  selectedSort,
+  setSelectedSort,
   selectedBrands,
   setSelectedBrands,
   selectedCategories,
@@ -8,7 +12,7 @@ const FilterBy = ({
   maxPrice,
   setMaxPrice,
 }) => {
-  // Brand toggle
+
   const toggleBrand = (brand) => {
     setSelectedBrands((prev) =>
       prev.includes(brand)
@@ -17,7 +21,6 @@ const FilterBy = ({
     );
   };
 
-  // Category toggle
   const toggleCategory = (category) => {
     setSelectedCategories((prev) =>
       prev.includes(category)
@@ -29,82 +32,58 @@ const FilterBy = ({
   return (
     <aside className="filterby">
 
+      {/* SORT BY */}
+      <div className="filterby-section">
+        <h4>Sort By</h4>
+
+        {sortMenu.map((sort) => (
+          <label key={sort.id} className="sort-option">
+            <input
+              type="radio"
+              name="sort"
+              checked={selectedSort === sort.title}
+              onChange={() => setSelectedSort(sort.title)}
+            />
+            {sort.title}
+          </label>
+        ))}
+      </div>
+
+      <hr />
+
+      {/* FILTER BY */}
       <div className="filterby-header">
         <h3>Filter By</h3>
-        <hr />
       </div>
 
       {/* Brands */}
       <div className="filterby-section">
         <h4>Brands</h4>
-
-        <label>
-          <input
-            type="checkbox"
-            checked={selectedBrands.includes("JBL")}
-            onChange={() => toggleBrand("JBL")}
-          />
-          JBL
-        </label>
-
-        <label>
-          <input
-            type="checkbox"
-            checked={selectedBrands.includes("boAt")}
-            onChange={() => toggleBrand("boAt")}
-          />
-          BoAt
-        </label>
-
-        <label>
-          <input
-            type="checkbox"
-            checked={selectedBrands.includes("Sony")}
-            onChange={() => toggleBrand("Sony")}
-          />
-          Sony
-        </label>
+        {brandsMenu.map((brand) => (
+          <label key={brand.id}>
+            <input
+              type="checkbox"
+              checked={selectedBrands.includes(brand.label)}
+              onChange={() => toggleBrand(brand.label)}
+            />
+            {brand.label}
+          </label>
+        ))}
       </div>
 
-      {/* Category */}
+      {/* Categories */}
       <div className="filterby-section">
         <h4>Category</h4>
-
-        <label>
-          <input
-            type="checkbox"
-            checked={selectedCategories.includes("Headphones")}
-            onChange={() => toggleCategory("Headphones")}
-          />
-          Headphones
-        </label>
-
-        <label>
-          <input
-            type="checkbox"
-            checked={selectedCategories.includes("Earbuds")}
-            onChange={() => toggleCategory("Earbuds")}
-          />
-          Earbuds
-        </label>
-
-        <label>
-          <input
-            type="checkbox"
-            checked={selectedCategories.includes("Earphones")}
-            onChange={() => toggleCategory("Earphones")}
-          />
-          Earphones
-        </label>
-
-        <label>
-          <input
-            type="checkbox"
-            checked={selectedCategories.includes("Neckbands")}
-            onChange={() => toggleCategory("Neckbands")}
-          />
-          Neckbands
-        </label>
+        {categoryMenu.map((category) => (
+          <label key={category.id}>
+            <input
+              type="checkbox"
+              checked={selectedCategories.includes(category.label)}
+              onChange={() => toggleCategory(category.label)}
+            />
+            {category.label}
+          </label>
+        ))}
       </div>
 
       {/* Price */}
@@ -112,14 +91,15 @@ const FilterBy = ({
         <h4>Price</h4>
         <input
           type="range"
-          min="0"
-          max="20000"
-          step="500"
+          min={priceRange.min}
+          max={priceRange.max}
+          step={priceRange.step}
           value={maxPrice}
           onChange={(e) => setMaxPrice(Number(e.target.value))}
         />
         <p className="filterby-price">₹{maxPrice}</p>
       </div>
+
     </aside>
   );
 };

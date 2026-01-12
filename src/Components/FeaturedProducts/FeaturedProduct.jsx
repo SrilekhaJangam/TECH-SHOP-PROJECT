@@ -3,8 +3,16 @@ import productsData from "../Products/productsData";
 import "./FeaturedProducts.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useNavigate } from "react-router-dom";
+
+
 
 const FeaturedProducts = () => {
+
+    const navigate = useNavigate();
+
+
+
     const filteredProduct = productsData.filter(
         (product) => product.tag === "featured-product"
     );
@@ -37,7 +45,8 @@ const settings = {
                     {
                     filteredProduct.map((item) => (
                         <div className="products" key={item.id}>
-                            <div className="card">
+                            <div className="card" 
+                            onClick={() => navigate(`/product/${item.id}`)}>
                                 <p>{item.title}</p>
 
                                 <img src={item.images[0]} alt={item.title} />

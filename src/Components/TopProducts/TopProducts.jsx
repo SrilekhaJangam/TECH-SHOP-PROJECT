@@ -1,11 +1,13 @@
 import { useState } from "react";
 import productsData from "../Products/productsData";
 import "./TopProducts.css";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate } from "react-router-dom";
 
 const categories = ["All", "Headphones", "Earbuds", "Earphones", "Neckbands"];
 
 const TopProducts = () => {
+  const navigate = useNavigate();
+
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredProducts = productsData.filter(
@@ -18,7 +20,7 @@ const TopProducts = () => {
     <section className="top-products">
       <h2>Top Products</h2>
 
-      <div className="tabs">
+      <div className="tabs" >
         {categories.map((cat) => (
           <button
             key={cat}
@@ -30,9 +32,10 @@ const TopProducts = () => {
         ))}
       </div>
 
-      <div className="products-grid">
+      <div className="products-grid" >
         {filteredProducts.slice(0, 11).map((product) => (
-          <div key={product.id} className="product-card">
+          <div key={product.id} className="product-card"
+          onClick={() => navigate(`/product/${product.id}`)}>
             <img src={product.images[0]} alt={product.title} />
 
             <div className="rating">

@@ -1,0 +1,139 @@
+.single-product {
+  background: #0e0e0e;
+  color: #fff;
+  padding: 40px 80px;
+}
+
+.sp-wrapper {
+  display: flex;
+  gap: 60px;
+}
+
+/* Images */
+.sp-images {
+  display: flex;
+  gap: 20px;
+}
+
+.sp-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sp-thumbnails img {
+  width: 70px;
+  border: 1px solid #333;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.sp-main-image img {
+  width: 400px;
+}
+
+/* Info */
+.sp-info h2 {
+  font-size: 26px;
+}
+
+.sp-subtitle {
+  color: #aaa;
+  margin: 8px 0;
+}
+
+.sp-rating {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.sp-rating span {
+  color: #aaa;
+}
+
+.sp-price {
+  margin: 15px 0;
+}
+
+.sp-price .final {
+  font-size: 28px;
+  color: #fff;
+}
+
+.sp-price .original {
+  margin-left: 10px;
+  text-decoration: line-through;
+  color: #777;
+}
+
+.sp-save {
+  color: #1db954;
+  margin-bottom: 5px;
+}
+
+.sp-stock {
+  color: #1db954;
+  font-weight: bold;
+}
+
+/* Offers */
+.sp-offers {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.sp-offers div {
+  border: 1px solid #333;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Button */
+.sp-cart-btn {
+  background: red;
+  border: none;
+  padding: 14px 40px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Tabs */
+.sp-tabs {
+  margin-top: 50px;
+  display: flex;
+  gap: 20px;
+}
+
+.sp-tabs button {
+  background: none;
+  border: none;
+  color: #aaa;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.sp-tabs .active {
+  background: red;
+  color: #fff;
+}
+
+/* Specs */
+.sp-specs {
+  margin-top: 30px;
+  max-width: 500px;
+}
+
+.sp-specs div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #222;
+}
+
+/* Related */
+.sp-related-title {
+  margin-top: 80px;
+  text-align: center;
+}

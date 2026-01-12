@@ -7,7 +7,13 @@ import "./Banner.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { useNavigate } from "react-router-dom";
+
+
 const Banner = () => {
+
+  const navigate = useNavigate();
+
   const heroProducts = productsData.filter(
     (product) => product.tag === "hero-product"
   );
@@ -28,7 +34,7 @@ const Banner = () => {
     <section className="banner">
       <Slider {...settings}>
         {heroProducts.map((item) => (
-          <div className="slide" key={item.id}>
+          <div className="slide" key={item.id} onClick={() => navigate(`/product/${item.id}`)}>
 
             <h1 className="bg-text">{item.type}</h1>
 
@@ -45,7 +51,7 @@ const Banner = () => {
                 <span>₹{item.originalPrice.toLocaleString()}</span>
               </p>
 
-              <button>Shop Now</button>
+              <button >Shop Now</button>
             </div>
 
             {/* RIGHT */}
