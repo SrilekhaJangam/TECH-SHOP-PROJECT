@@ -1,7 +1,7 @@
 .search-box {
   position: absolute;
-  top: 80px;
-  left: 50%;
+  top:15px;
+  left:60%;
   transform: translateX(-50%);
   width: 420px;
   background: #111;
@@ -15,19 +15,19 @@
   padding: 10px;
   background: #000;
   color: white;
-  border: 1px solid #444;
+  border: 2px solid #e9e1e1;
   outline: none;
 }
 
 .close {
   position: absolute;
-  right: 15px;
-  top: 14px;
+  right: 5px;
+  top: 20px;
   cursor: pointer;
   color: #aaa;
 }
 
-/* Dropdown exactly like screenshot */
+
 .search-dropdown {
   margin-top: 10px;
   background: #111;
@@ -90,7 +90,8 @@
 .login-btn {
   display: block;
   border: 1px solid #444;
-  color: #ddd;
+  color: white;
+  background-color: black;
   text-align: center;
   padding: 8px;
   border-radius: 4px;
@@ -99,7 +100,13 @@
 }
 
 .login-btn:hover {
-  background: #222;
+  background: red;
+}
+
+
+.profile-wrapper hr{
+
+  color:#d6deea;
 }
 
 .dropdown-link {

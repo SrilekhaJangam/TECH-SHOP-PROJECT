@@ -1,0 +1,65 @@
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: #111;
+  width: 380px;
+  padding: 25px;
+  border-radius: 6px;
+  color: #fff;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ===== AUTH CONTENT ===== */
+.auth-container h2 {
+  margin-bottom: 6px;
+}
+
+.switch-text {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+.switch-text span {
+  color: #fff;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* ⚠️ scoped input */
+.auth-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #000;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 10px;
+  background: red;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+

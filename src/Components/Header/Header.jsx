@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import productsData from "../Products/productsData";
 import { dropdownMenu } from "./headerData";
 
-export const Header = () => {
+export const Header = ({ openAuthModal }) => {
   const [showSearch, setShowSearch] = useState(false);
   const [query, setQuery] = useState("");
   const [showProfile, setShowProfile] = useState(false);
@@ -23,12 +23,10 @@ export const Header = () => {
 
   return (
     <nav className="navbar">
-      {/* Logo */}
       <div className="logo">
         <h1>Tech-Shop</h1>
       </div>
 
-      {/* Search UI (only on icon click) */}
       {showSearch && (
         <div className="search-box">
           <input
@@ -38,7 +36,6 @@ export const Header = () => {
             onChange={(e) => setQuery(e.target.value)}
             autoFocus
           />
-
           <i
             className="fa-solid fa-xmark close"
             onClick={() => {
@@ -49,12 +46,9 @@ export const Header = () => {
 
           {query && (
             <div className="search-dropdown">
-              {filteredProducts.length > 0 ? (
+              {filteredProducts.length ? (
                 filteredProducts.map(product => (
-                  <p
-                    key={product.id}
-                    onClick={() => handleSelect(product)}
-                  >
+                  <p key={product.id} onClick={() => handleSelect(product)}>
                     {product.title}
                   </p>
                 ))
@@ -66,20 +60,18 @@ export const Header = () => {
         </div>
       )}
 
-      {/* Icons */}
       <div className="icons">
-        {/* Search */}
         <i
           className="fa-solid fa-magnifying-glass"
           onClick={() => setShowSearch(true)}
         ></i>
 
-        {/* Cart */}
-        <Link className="headerLinks" to="/Cart">
+        {/* ONLY cart navigates */}
+        <Link className="headerLinks" to="/cart">
           <i className="fa-solid fa-cart-shopping"></i>
         </Link>
 
-        {/* Profile (CLICK based) */}
+        {/* Profile */}
         <div className="profile-wrapper">
           <i
             className="fa-regular fa-user headerLinks"
@@ -93,18 +85,21 @@ export const Header = () => {
                 Access account and manage orders
               </span>
 
-              <Link to="/login" className="login-btn">
+              <button
+                className="login-btn"
+                onClick={() => {
+                  setShowProfile(false);
+                  openAuthModal("signup");
+                }}
+              >
                 Login / Signup
-              </Link>
+              </button>
+              {<hr/>}
 
               {dropdownMenu.map(item => (
-                <Link
-                  key={item.id}
-                  to={item.path}
-                  className="dropdown-link"
-                >
+                <p key={item.id} className="dropdown-link">
                   {item.link}
-                </Link>
+                </p>
               ))}
             </div>
           )}
@@ -113,7 +108,6 @@ export const Header = () => {
     </nav>
   );
 };
-
 
 
 

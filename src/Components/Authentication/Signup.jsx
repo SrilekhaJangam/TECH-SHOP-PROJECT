@@ -2,7 +2,7 @@ import "./Auth.css";
 
 const Signup = ({ switchToLogin }) => {
   return (
-    <>
+    <div className="auth-container">
       <h2>Signup</h2>
 
       <p className="switch-text">
@@ -16,8 +16,10 @@ const Signup = ({ switchToLogin }) => {
       <input type="password" placeholder="Confirm Password" />
 
       <button className="primary-btn">Signup</button>
-    </>
+    </div>
   );
 };
 
 export default Signup;
+
+

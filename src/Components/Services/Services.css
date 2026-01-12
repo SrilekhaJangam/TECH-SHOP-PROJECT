@@ -1,0 +1,59 @@
+.services-section {
+
+  padding: 80px 40px;
+}
+
+/* Title */
+.services-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  color: #ddd;
+  margin-bottom: 70px;
+}
+
+/* Main container */
+.advantages {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+/* Each service item */
+.service-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: white;
+  min-width: 220px;
+}
+
+/* Icon */
+.services-icon {
+  font-size: 38px;
+  color: red;
+  display: flex;
+  align-items: center;
+}
+
+/* Text */
+.services-text {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.services-text h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+.services-text p {
+  font-size: 14px;
+  color: #aaa;
+   margin-top: 7px;
+}
