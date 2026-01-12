@@ -1,9 +1,14 @@
-export const Products = () => {
-  return (
-    <h2 style={{ color: "white", padding: "40px" }}>
-      Products Page
-    </h2>
-  );
-};
+import ProductGrid from "../Components/Products/ProductGrid"
 
-export default Products;
+
+export const Products=()=>{
+    return(
+        <>
+       
+        <h1 style={{color:'white',textAlign:'center'}}>PRODUCTS PAGE</h1>
+
+        <ProductGrid/>
+         
+        </>
+    )
+}

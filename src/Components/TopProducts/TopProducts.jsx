@@ -1,6 +1,7 @@
 import { useState } from "react";
 import productsData from "../Products/productsData";
 import "./TopProducts.css";
+import { Link } from "react-router-dom";
 
 const categories = ["All", "Headphones", "Earbuds", "Earphones", "Neckbands"];
 
@@ -50,9 +51,10 @@ const TopProducts = () => {
           </div>
         ))}
 
-        <div className="browse-card">
+        <Link to="/products" className="browse-card"   onClick={() => console.log("clicked")}>
           <p>Browse All Products →</p>
-        </div>
+        </Link>
+
       </div>
     </section>
   );

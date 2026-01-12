@@ -13,7 +13,7 @@ export const AppRouter=()=> {
   return (
     <Routes>
         <Route path="/" element={<Home />} />
-         <Route path="/Products" element={<Products />} />
+         <Route path="/products" element={<Products />} />
       <Route path="/cart" element={<Cart />} />
      
     </Routes>
