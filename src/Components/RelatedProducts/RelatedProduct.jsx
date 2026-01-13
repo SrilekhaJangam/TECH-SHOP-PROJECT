@@ -32,14 +32,12 @@ const RelatedProducts = ({ category, currentId }) => {
 
       <Slider {...settings}>
         {relatedProducts.map((item) => (
-          <div key={item.id} className="rp-card-wrapper">
+          <div key={item.id} className="rp-card-wrapper" onClick={() => navigate(`/product/${item.id}`)} >
             <div
-              className="rp-card"
-              onClick={() => navigate(`/product/${item.id}`)}
-            >
+              className="rp-card" >
               <img src={item.images[0]} alt={item.title} />
 
-              <h4>{item.title}</h4>
+              <h4 >{item.title}</h4>
 
               <div className="rp-rating">
                 {"★".repeat(item.rateCount)}
