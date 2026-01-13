@@ -8,9 +8,13 @@ export const Home = () => {
     
   return (
     <>
+  {/* Banner  component*/}
       <Banner />
+
       <FeaturedProducts />
+
       <TopProducts />
+      
       <Services/>
     </>
   );
