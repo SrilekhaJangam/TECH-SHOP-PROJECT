@@ -1,5 +1,5 @@
 
-import Banner from "../Components/Carousel/banner";
+import Banner from "../Components/Carousel/Banner";
 import FeaturedProducts from "../Components/FeaturedProducts/FeaturedProduct";
 import { Services } from "../Components/Services/Services";
 import TopProducts from "../Components/TopProducts/TopProducts";
