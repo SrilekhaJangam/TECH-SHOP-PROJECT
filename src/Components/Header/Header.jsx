@@ -4,12 +4,20 @@ import { Link, useNavigate } from "react-router-dom";
 import productsData from "../Products/productsData";
 import { dropdownMenu } from "./headerData";
 
+import { useSelector } from "react-redux";
+
 export const Header = ({ openAuthModal }) => {
   const [showSearch, setShowSearch] = useState(false);
   const [query, setQuery] = useState("");
   const [showProfile, setShowProfile] = useState(false);
 
   const navigate = useNavigate();
+
+
+   const count = useSelector((state) =>
+    state.cart.items.reduce((sum, item) => sum + item.quantity, 0)
+  );
+
 
   const filteredProducts = productsData.filter(product =>
     product.title.toLowerCase().includes(query.toLowerCase())
@@ -68,7 +76,7 @@ export const Header = ({ openAuthModal }) => {
 
         {/* ONLY cart navigates */}
         <Link className="headerLinks" to="/cart">
-          <i className="fa-solid fa-cart-shopping"></i>
+          <i className="fa-solid fa-cart-shopping"></i><sup className="cart-count">{count}</sup>
         </Link>
 
         {/* Profile */}

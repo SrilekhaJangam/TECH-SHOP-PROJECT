@@ -120,42 +120,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .navbar {
   background-color: black;
   color: white;
@@ -177,4 +141,8 @@
     gap:30px;
     font-size: 20px;
 } 
+
+.cart-count{
+ color:red;
+
 

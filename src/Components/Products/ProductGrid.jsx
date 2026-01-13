@@ -2,6 +2,10 @@ import { useNavigate } from "react-router-dom";
 import productsData from "./productsData";
 import "./ProductGrid.css";
 
+
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Cart/CartSlice";
+
 const ProductGrid = ({
   selectedSort,
   selectedBrands,
@@ -9,6 +13,8 @@ const ProductGrid = ({
   maxPrice,
 }) => {
   const navigate = useNavigate();
+
+   const dispatch = useDispatch();
 
   // 1️⃣ FILTER
   let filteredProducts = productsData.filter((product) => {
@@ -47,10 +53,10 @@ const ProductGrid = ({
           <div
             className="pg-card"
             key={product.id}
-            onClick={() => navigate(`/product/${product.id}`)}
             style={{ cursor: "pointer" }}
           >
-            <img src={product.images[0]} alt={product.title} />
+           <div className="pg-card-top"  onClick={() => navigate(`/product/${product.id}`)}>
+             <img src={product.images[0]} alt={product.title} />
 
             <div className="pg-rating">
               {"★".repeat(product.rateCount)}
@@ -64,7 +70,8 @@ const ProductGrid = ({
               <span>₹{product.originalPrice}</span>
             </div>
 
-            <button className="pg-btn">Add to cart</button>
+           </div>
+            <button className="pg-btn"   onClick={() => dispatch(addToCart(product))}>Add to cart</button>
           </div>
         ))}
       </div>
