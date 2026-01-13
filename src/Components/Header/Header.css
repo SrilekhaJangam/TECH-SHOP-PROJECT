@@ -144,12 +144,12 @@
 
 .cart-count{
   position:absolute;
-  top:6px;
-  bottom:91%;
+  top:1px;
+  bottom:96%;
   border: 2px solid red;
   border-radius: 50%;
   background-color: red;
-  padding:5px 10px;
+  padding:3px 7px;
  color:white;
  text-decoration: none;
  font-weight: bold;

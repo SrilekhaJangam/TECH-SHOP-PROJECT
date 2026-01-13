@@ -4,11 +4,17 @@ import productsData from "../Products/productsData";
 import "./SingleProduct.css";
 import reviewsData from "./reviewsData";
 
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Cart/CartSlice";
+
 import RelatedProducts from "../RelatedProducts/RelatedProduct";
 
 
 
 const SingleProduct = () => {
+
+  const dispatch = useDispatch();
+
   const { id } = useParams();
 
   const [activeTab, setActiveTab] = useState("specifications");
@@ -84,7 +90,7 @@ const SingleProduct = () => {
             <div>Pay Later & Avail Cashback</div>
           </div>
 
-          <button className="sp-cart-btn">Add to cart</button>
+          <button className="sp-cart-btn"  onClick={() => dispatch(addToCart(product))}>Add to cart</button>
         </div>
       </div>
 
