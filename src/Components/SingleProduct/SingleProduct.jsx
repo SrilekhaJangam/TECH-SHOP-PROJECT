@@ -2,9 +2,14 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import productsData from "../Products/productsData";
 import "./SingleProduct.css";
+import reviewsData from "./reviewsData";
+
 
 const SingleProduct = () => {
   const { id } = useParams();
+
+  const [activeTab, setActiveTab] = useState("specifications");
+
 
   const product = productsData.find(
     (item) => item.id === Number(id)
@@ -54,13 +59,24 @@ const SingleProduct = () => {
             <span className="original">₹{product.originalPrice}</span>
           </div>
 
-          <p className="sp-save">
+         <div className="sp-stock-discount">
+           <p className="sp-save">
             You save: ₹{product.originalPrice - product.finalPrice} (33%)
+            <p>(Inclusive of all taxes)</p>
           </p>
-
           <p className="sp-stock">✔ In Stock</p>
+         </div>
+          <hr/>
 
+          
+          <div className="sp-offers-title">
+
+              <h3>Offers and Discounts</h3>
+
+          </div>
+            
           <div className="sp-offers">
+      
             <div>No Cost EMI on Credit Card</div>
             <div>Pay Later & Avail Cashback</div>
           </div>
@@ -70,18 +86,97 @@ const SingleProduct = () => {
       </div>
 
       <div className="sp-tabs">
-        <button className="active">Specifications</button>
-        <button>Overview</button>
-        <button>Reviews</button>
+        <button
+          className={activeTab === "specifications" ? "active" : ""}
+          onClick={() => setActiveTab("specifications")}
+        >
+          Specifications
+        </button>
+
+        <button
+          className={activeTab === "overview" ? "active" : ""}
+          onClick={() => setActiveTab("overview")}
+        >
+          Overview
+        </button>
+
+        <button
+          className={activeTab === "reviews" ? "active" : ""}
+          onClick={() => setActiveTab("reviews")}
+        >
+          Reviews
+        </button>
       </div>
 
-      <div className="sp-specs">
-        <div><span>Brand</span><span>{product.brand}</span></div>
-        <div><span>Model</span><span>{product.title}</span></div>
-        <div><span>Category</span><span>{product.category}</span></div>
-        <div><span>Connectivity</span><span>Wireless</span></div>
-        <div><span>Microphone</span><span>Yes</span></div>
+
+      {/* TAB CONTENT */}
+      <div className="sp-tab-content">
+
+        {/* SPECIFICATIONS */}
+        {activeTab === "specifications" && (
+          <div className="sp-specs">
+            <div><span>Brand</span><span>{product.brand}</span></div>
+            <div><span>Model</span><span>{product.title}</span></div>
+            <div><span>Category</span><span>{product.category}</span></div>
+            <div><span>Connectivity</span><span>Wireless</span></div>
+            <div><span>Microphone</span><span>Yes</span></div>
+          </div>
+        )}
+
+        {/* OVERVIEW */}
+        {activeTab === "overview" && (
+          <div className="sp-overview">
+            <p>
+              {product.info} is designed to deliver an immersive audio
+              experience with premium build quality, powerful bass,
+              and crystal-clear sound. Ideal for daily use, travel,
+              and workouts.
+            </p>
+
+            <ul>
+              <li>High-quality sound output</li>
+              <li>Comfortable and lightweight design</li>
+              <li>Long battery life</li>
+              <li>Fast charging support</li>
+            </ul>
+          </div>
+        )}
+
+        {/* REVIEWS */}
+       {activeTab === "reviews" && (
+  <div className="sp-reviews">
+    {reviewsData.map((review) => (
+      <div key={review.id} className="review-card">
+
+        {/* LEFT – Avatar */}
+        <div className="review-avatar">
+          <div className="avatar-circle">
+            {review.name.charAt(0)}
+          </div>
+        </div>
+
+        {/* RIGHT – Content */}
+        <div className="review-content">
+          <div className="review-top">
+            <h4>{review.name}</h4>
+            <span className="review-date">{review.date}</span>
+          </div>
+
+          <div className="review-rating">
+            {"★".repeat(review.rateCount)}
+          </div>
+
+          <p className="review-text">{review.review}</p>
+        </div>
+
       </div>
+    ))}
+  </div>
+)}
+
+
+      </div>
+
     </section>
   );
 };

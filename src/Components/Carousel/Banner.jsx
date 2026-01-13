@@ -34,7 +34,7 @@ const Banner = () => {
     <section className="banner">
       <Slider {...settings}>
         {heroProducts.map((item) => (
-          <div className="slide" key={item.id} onClick={() => navigate(`/product/${item.id}`)}>
+          <div className="slide" key={item.id}>
 
             <h1 className="bg-text">{item.type}</h1>
 
@@ -51,7 +51,7 @@ const Banner = () => {
                 <span>₹{item.originalPrice.toLocaleString()}</span>
               </p>
 
-              <button >Shop Now</button>
+              <button  onClick={() => navigate(`/product/${item.id}`)}>Shop Now</button>
             </div>
 
             {/* RIGHT */}

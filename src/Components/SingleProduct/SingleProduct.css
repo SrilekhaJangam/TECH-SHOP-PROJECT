@@ -6,45 +6,58 @@
 
 .sp-wrapper {
   display: flex;
-  gap: 60px;
+  gap: 50px;
+  justify-content: space-between;
+}
+.sp-wrapper hr{
+  color:#b0a6a6;
 }
 
 /* Images */
 .sp-images {
   display: flex;
-  gap: 20px;
+  gap: 80px;
 }
 
 .sp-thumbnails {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 50px;
 }
 
 .sp-thumbnails img {
-  width: 70px;
+  width: 100px;
   border: 1px solid #333;
   padding: 5px;
   cursor: pointer;
 }
 
 .sp-main-image img {
-  width: 400px;
+  width: 600px;
+ 
 }
 
 /* Info */
+.sp-info{
+  width:40%;
+}
 .sp-info h2 {
-  font-size: 26px;
+  font-size: 50px;
+  margin-bottom: 5px;
 }
 
 .sp-subtitle {
   color: #aaa;
   margin: 8px 0;
+  font-size:25px;
+  font-weight: bold;
 }
 
 .sp-rating {
   color: red;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
+  font-size: 18px;
+  
 }
 
 .sp-rating span {
@@ -52,11 +65,12 @@
 }
 
 .sp-price {
-  margin: 15px 0;
+  
+  font-weight: bold;
 }
 
 .sp-price .final {
-  font-size: 28px;
+  font-size: 40px;
   color: #fff;
 }
 
@@ -64,16 +78,37 @@
   margin-left: 10px;
   text-decoration: line-through;
   color: #777;
+  font-size: 25px;
 }
-
+.sp-stock-discount{
+  display: flex;
+  gap:50px;
+  justify-content: space-between;
+}
 .sp-save {
+  font-size: 20px;
   color: #1db954;
   margin-bottom: 5px;
 }
+.sp-save p{
+  margin-top: 0px;
+   margin-bottom: 30px;
+  color:#b9b8b8;
+  font-size: 15px;
+}
 
 .sp-stock {
-  color: #1db954;
+ display: inline-flex;
+  align-items: center;
+  background-color: #0e8537;
+  color: white;
   font-weight: bold;
+  font-size: 18px;
+  padding: 1px 20px;
+  border-radius: 4px;
+}
+.sp-offers-title{
+  color:#b9b8b8;
 }
 
 /* Offers */
@@ -87,6 +122,7 @@
   border: 1px solid #333;
   padding: 10px;
   font-size: 14px;
+  color:#b9b8b8;
 }
 
 /* Button */
@@ -101,9 +137,12 @@
 
 /* Tabs */
 .sp-tabs {
-  margin-top: 50px;
+  margin-top: 100px;
   display: flex;
-  gap: 20px;
+  gap: 85px;
+  justify-content: center;
+  margin-bottom: 60px;
+  
 }
 
 .sp-tabs button {
@@ -112,11 +151,14 @@
   color: #aaa;
   padding: 10px 20px;
   cursor: pointer;
+  font-size: 18px;
+
 }
 
 .sp-tabs .active {
   background: red;
-  color: #fff;
+  color: #ddd;
+  font-size: 18px;;
 }
 
 /* Specs */
@@ -136,4 +178,93 @@
 .sp-related-title {
   margin-top: 80px;
   text-align: center;
+}
+
+
+.sp-tabs button.active {
+  background: red;
+  color: #fff;
+}
+
+.sp-overview,
+.sp-reviews,
+.sp-specs {
+  margin-top: 20px;
+}
+
+.review-card {
+  border-bottom: 1px solid #222;
+  padding: 15px 0;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  color: #aaa;
+}
+/* Reviews container */
+.sp-reviews {
+  margin-top: 30px;
+  max-width: 800px;
+}
+
+/* Each review */
+.review-card {
+  display: flex;
+  gap: 15px;
+  padding: 20px 0;
+  border-bottom: 1px solid #222;
+}
+
+/* Avatar */
+.review-avatar {
+  flex-shrink: 0;
+}
+
+.avatar-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #333;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Content */
+.review-content {
+  flex: 1;
+}
+
+/* Name + Date */
+.review-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-top h4 {
+  margin: 0;
+  font-size: 15px;
+  color: #fff;
+}
+
+.review-date {
+  color: #777;
+  font-size: 13px;
+}
+
+/* Stars */
+.review-rating {
+  color: red;
+  margin: 4px 0;
+}
+
+/* Review text */
+.review-text {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.5;
 }
