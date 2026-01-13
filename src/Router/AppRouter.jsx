@@ -6,9 +6,6 @@ import {Products} from "../Pages/Products";
 import Cart from "../Pages/Cart";
 import SingleProduct from "../Components/SingleProduct/SingleProduct";
 
-
-
-
 export const AppRouter=()=> {
 
   return (

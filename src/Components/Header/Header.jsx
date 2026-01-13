@@ -26,7 +26,7 @@ export const Header = ({ openAuthModal }) => {
   const handleSelect = (product) => {
     setQuery("");
     setShowSearch(false);
-    navigate(`${product.path}${product.id}`);
+    navigate(`/product/${product.id}`);
   };
 
   return (
@@ -44,13 +44,16 @@ export const Header = ({ openAuthModal }) => {
             onChange={(e) => setQuery(e.target.value)}
             autoFocus
           />
+
+         
           <i
-            className="fa-solid fa-xmark close"
+            className="fa-solid fa-xmark close"  
             onClick={() => {
               setShowSearch(false);
               setQuery("");
             }}
           ></i>
+
 
           {query && (
             <div className="search-dropdown">
@@ -70,13 +73,13 @@ export const Header = ({ openAuthModal }) => {
 
       <div className="icons">
         <i
-          className="fa-solid fa-magnifying-glass"
+          className="fa-solid fa-magnifying-glass" title='search'
           onClick={() => setShowSearch(true)}
         ></i>
 
         {/* ONLY cart navigates */}
         <Link className="headerLinks" to="/cart">
-          <i className="fa-solid fa-cart-shopping" id='cart-icon'></i>
+          <i className="fa-solid fa-cart-shopping" id='cart-icon' title='Cart'></i>
           {count > 0 && (
     <sup className="cart-count">{count}</sup>
   )}
@@ -85,7 +88,7 @@ export const Header = ({ openAuthModal }) => {
         {/* Profile */}
         <div className="profile-wrapper">
           <i
-            className="fa-regular fa-user headerLinks"
+            className="fa-regular fa-user headerLinks" title='Profile'
             onClick={() => setShowProfile(!showProfile)}
           ></i>
 
