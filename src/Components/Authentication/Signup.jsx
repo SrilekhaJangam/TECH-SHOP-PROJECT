@@ -2,6 +2,7 @@ import "./Auth.css";
 
 const Signup = ({ switchToLogin }) => {
   return (
+    <>
     <div className="auth-container">
       <h2>Signup</h2>
 
@@ -17,6 +18,14 @@ const Signup = ({ switchToLogin }) => {
 
       <button className="primary-btn">Signup</button>
     </div>
+    <p className="login"><p>__________</p><p className="login-txt">or login with</p><p>__________</p></p>
+    <div className="social-btns">
+      <button className="fb">Facebook</button>
+      <button className="google">Google</button>
+      <button className="tweet">Twitter</button>
+    </div>
+
+    </>
   );
 };
 

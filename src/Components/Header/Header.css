@@ -143,6 +143,19 @@
 } 
 
 .cart-count{
- color:red;
+  position:absolute;
+  top:6px;
+  bottom:91%;
+  border: 2px solid red;
+  border-radius: 50%;
+  background-color: red;
+  padding:5px 10px;
+ color:white;
+ text-decoration: none;
+ font-weight: bold;
+}
+#cart-icon{
+  position:relative;
+}
 
 

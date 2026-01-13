@@ -76,7 +76,10 @@ export const Header = ({ openAuthModal }) => {
 
         {/* ONLY cart navigates */}
         <Link className="headerLinks" to="/cart">
-          <i className="fa-solid fa-cart-shopping"></i><sup className="cart-count">{count}</sup>
+          <i className="fa-solid fa-cart-shopping" id='cart-icon'></i>
+          {count > 0 && (
+    <sup className="cart-count">{count}</sup>
+  )}
         </Link>
 
         {/* Profile */}

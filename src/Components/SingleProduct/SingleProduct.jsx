@@ -4,6 +4,9 @@ import productsData from "../Products/productsData";
 import "./SingleProduct.css";
 import reviewsData from "./reviewsData";
 
+import RelatedProducts from "../RelatedProducts/RelatedProduct";
+
+
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -173,6 +176,11 @@ const SingleProduct = () => {
     ))}
   </div>
 )}
+<RelatedProducts
+  category={product.category}
+  currentId={product.id}
+/>
+
 
 
       </div>

@@ -57,7 +57,7 @@ const TopProducts = () => {
             </div>
             </div>
 
-            <button className="add-btn"  onClick={() => dispatch(addToCart(product))}>Add to cart</button>
+            <button className="add-btn" style={{}} onClick={() => dispatch(addToCart(product))}>Add to cart</button>
           </div>
         ))}
 
