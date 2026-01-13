@@ -76,8 +76,7 @@ export const Header = ({ openAuthModal }) => {
           className="fa-solid fa-magnifying-glass" title='search'
           onClick={() => setShowSearch(true)}
         ></i>
-
-        {/* ONLY cart navigates */}
+        
         <Link className="headerLinks" to="/cart">
           <i className="fa-solid fa-cart-shopping" id='cart-icon' title='Cart'></i>
           {count > 0 && (
